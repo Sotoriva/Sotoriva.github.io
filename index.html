@@ -13,32 +13,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "r3i_N6XZJstf1nuOG",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
 
-                emailjs.sendForm('service_cpqoxzv', 'contact_form_template', this)
-                    .then(() => {
-                        alert('Mensagem enviada com sucesso!');
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        alert('Falha ao enviar a mensagem. Erro: ' + error);
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
     <title>SEPERTECH</title>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LY74P6S2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1LY74P6S2E');
+</script>
+
+<!-- banner de consentimento -->
+<script src="https://platform.illow.io/banner.js?siteId=289d93d2-0382-4c4c-ab3c-51fad5307071"></script>
 
 <body>
     <!-- <div id="home" class="container-fluid">
@@ -107,8 +97,23 @@
         </div>
     </div> -->
 
-    <header class="sticky-top">
-        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Dark offcanvas navbar">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu Navegação</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#hero">Início</a></li>
+                <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#services">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#about">Quem somos</a></li>
+                <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header class="fixed-top header-bg">
+        <nav id="navbar" class="navbar navbar-expand-md fw-medium" aria-label="Dark offcanvas navbar ">
             <div class="container-fluid">
                 <a class="navbar-brand col-lg-3" href="#">
                     <svg width="215" height="30" viewBox="0 0 215 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,17 +122,17 @@
                             fill="#1A1A1A" />
                     </svg>
                 </a>
-                <div class="collapse navbar-collapse d-lg-flex justify-content-center">
+                <div class="collapse navbar-collapse d-md-flex justify-content-center">
                     <ul class="navbar-nav">
-                        <li class="nav-item px-3"><a class="nav-link" href="#hero">Início</a></li>
-                        <li class="nav-item px-3"><a class="nav-link" href="#services">Serviços</a></li>
-                        <li class="nav-item px-3"><a class="nav-link" href="#about">Quem somos</a></li>
-                        <li class="nav-item px-3"><a class="nav-link" href="#contact">Contato</a></li>
+                        <li class="nav-item px-3"><a class="nav-link text-nowrap" href="#hero">Início</a></li>
+                        <li class="nav-item px-3"><a class="nav-link text-nowrap" href="#services">Serviços</a></li>
+                        <li class="nav-item px-3"><a class="nav-link text-nowrap" href="#about">Quem somos</a></li>
+                        <li class="nav-item px-3"><a class="nav-link text-nowrap" href="#contact">Contato</a></li>
                     </ul>
                 </div>
-                <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                <div class="d-md-flex col-md-1 justify-content-md-end">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight"
+                        data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -137,39 +142,44 @@
     </header>
 
     <main data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
-        <div id="hero" class="container-fluid row p-0 align-items-center min-vh-100 my-5">
-            <img class="col col-sm-12 col-md-6 col-xxl-4 pe-5" src="../images/Device - Macbook Pro.webp" />
-            <div class="col col-sm-12 col-md-6 col-xxl-6 justify-content-center mx-5">
-                <h1 class="display-3">Transforme sua empresa com <strong class="fw-bold">Tecnologia Sob
-                        Medida</strong>
+        <div id="hero" class="container-fluid row px-0 mx-0 py-5 min-vh-100 align-items-center radial-bg">
+            <img class="col-8 col-sm-6 col-md-5 col-lg-4 px-0 pt-3" src="../images/Device - Macbook Pro.webp" />
+            <div class="col-12 col-md-7 col-lg-8 px-5">
+                <h1 class="display-3 mb-4">Transforme sua empresa com
+                    <strong class="fw-bold">Tecnologia Sob Medida</strong>
                 </h1>
                 <p class="lead text-body-secondary mb-5">
-                    Entendemos que cada negócio é único e enfrenta desafios distintos. Por isso, oferecemos
-                    soluções personalizadas que se adaptam perfeitamente às suas necessidades. Nossa missão
-                    é potencializar o seu sucesso através de tecnologias sob medida, de forma escalável e com
-                    total integridade e transparência.
+                    Entendemos que cada negócio é único e enfrenta desafios distintos. Por isso, oferecemos soluções
+                    personalizadas que se adaptam perfeitamente às suas necessidades. Nossa missão é potencializar o seu
+                    sucesso através de tecnologias sob medida, de forma escalável e com total integridade e
+                    transparência.
                 </p>
-                <div class="container p-0 row">
-                    <p class="col fs-5">
-                        <strong>Faça seu orçamento e estudo de viabilidade econômica sem compromisso!</strong>
-                    </p>
-                    <button class="col-4 btn btn-primary" href="#contact">Quero solicitar o orçamento</button>
+                <div class="row align-items-center p-0">
+                    <div class="col-12 col-lg-8">
+                        <p class="fs-5">
+                            <strong>Faça seu orçamento e estudo de viabilidade econômica sem compromisso!</strong>
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <button class="btn btn-primary col-12" href="#contact">Quero solicitar o orçamento</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="services" class="d-flex justify-content-center align-items-center bg-light min-vh-100">
-            <div class="col-10 col-sm-10 col-md-8 my-5">
+        <div id="services" class="container-fluid row py-5 min-vh-100 align-items-center linear-bg">
+            <div class="container col-12 col-sm-10 col-md-8 my-5 mx-auto">
                 <h2>Nossos Serviços</h2>
                 <p>Oferecemos uma gama de soluções tecnológicas personalizadas, projetadas para atender às necessidades
                     específicas do seu negócio. Nossos serviços são inovadores, escaláveis e customizados, capazes de
                     fornecer a solução ideal para sua empresa.</p>
-                <div class="position-relative">
-                    <div class="media-scroller">
-                        <div class="media-group" id="group-1">
-                            <div class="d-flex align-items-start media-element p-3" style="background-color: #DAE7F2;">
+                <div class="slider-container">
+                    <button class="prev-btn bg-primary">&#10094;</button>
+                    <div class="slider">
+                        <div class="item">
+                            <div class="shadow-sm mycard media-element p-4">
                                 <div
-                                    class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
+                                    class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
                                     <svg class="bi" width="2em" height="2em" viewBox="0 0 124 124">
                                         <path
                                             d="M10.3333 113.667V20.6666C10.3333 17.825 11.3451 15.3923 13.3687 13.3687C15.3923 11.3451 17.8249 10.3333 20.6666 10.3333H103.333C106.175 10.3333 108.608 11.3451 110.631 13.3687C112.655 15.3923 113.667 17.825 113.667 20.6666V82.6666C113.667 85.5083 112.655 87.9409 110.631 89.9646C108.608 91.9882 106.175 93 103.333 93H30.9999L10.3333 113.667ZM26.6083 82.6666H103.333V20.6666H20.6666V88.4791L26.6083 82.6666Z"
@@ -177,17 +187,23 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="fs-3">ChatBot para Whatsapp utilizando IA e integrada com banco de dados
+                                    <h3 class="fs-4">ChatBot para Whatsapp utilizando IA e integrada com banco de
+                                        dados
                                     </h3>
                                     <p>Transforme a forma como sua empresa se comunica com seus clientes utilizando
-                                        nosso avançado serviço de ChatBot para WhatsApp. Nossa solução inovadora combina
-                                        inteligência artificial com integração direta ao banco de dados, proporcionando
-                                        uma experiência de atendimento ao cliente rápida, precisa e personalizada.</p>
+                                        nosso avançado serviço de ChatBot para WhatsApp. Nossa solução inovadora
+                                        combina
+                                        inteligência artificial com integração direta ao banco de dados,
+                                        proporcionando
+                                        uma experiência de atendimento ao cliente rápida, precisa e personalizada.
+                                    </p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-start media-element p-3" style="background-color: #DAE7F2;">
+                        </div>
+                        <div class="item">
+                            <div class="shadow-sm mycard media-element p-4">
                                 <div
-                                    class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
+                                    class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
                                     <svg class="bi" width="2em" height="2em" viewBox="0 0 124 124">
                                         <g clip-path="url(#clip0_50_695)">
                                             <path
@@ -202,8 +218,9 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="fs-3">Sistema de manutenção preditiva de equipamentos com IA</h3>
-                                    <p> Maximize a eficiência e prolongue a vida útil dos seus equipamentos com o nosso
+                                    <h3 class="fs-4">Sistema de manutenção preditiva de equipamentos com IA</h3>
+                                    <p> Maximize a eficiência e prolongue a vida útil dos seus equipamentos com o
+                                        nosso
                                         avançado Sistema de Manutenção Preditiva baseado em Inteligência Artificial.
                                         Nossa solução inovadora utiliza tecnologias de IA para monitorar, analisar e
                                         prever a necessidade de manutenção, ajudando sua empresa a evitar falhas
@@ -211,19 +228,11 @@
                                     </p>
                                 </div>
                             </div>
-
-                            <a class="next" href="#group-2" aria-label="next">
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </a>
                         </div>
-                        <div class="media-group" id="group-2">
-                            <a class="previous" href="#group-1">
-                                <i class="fa fa fa-chevron-left" aria-hidden="true"></i>
-                            </a>
-
-                            <div class="d-flex align-items-start media-element p-3" style="background-color: #DAE7F2;">
+                        <div class="item">
+                            <div class="shadow-sm mycard media-element p-4">
                                 <div
-                                    class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
+                                    class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
                                     <svg class="bi" width="2em" height="2em" viewBox="0 0 124 124">
                                         <path
                                             d="M25.8333 108.5C22.9917 108.5 20.559 107.488 18.5354 105.465C16.5118 103.441 15.5 101.008 15.5 98.1667V46.5C15.5 37.8889 18.5139 30.5694 24.5417 24.5417C30.5694 18.5139 37.8889 15.5 46.5 15.5H77.5C86.1111 15.5 93.4305 18.5139 99.4583 24.5417C105.486 30.5694 108.5 37.8889 108.5 46.5V98.1667C108.5 101.008 107.488 103.441 105.465 105.465C103.441 107.488 101.008 108.5 98.1667 108.5H25.8333ZM25.8333 98.1667H98.1667V46.5C98.1667 40.8167 96.1431 35.9514 92.0958 31.9042C88.0486 27.8569 83.1833 25.8333 77.5 25.8333H46.5C40.8167 25.8333 35.9514 27.8569 31.9042 31.9042C27.8569 35.9514 25.8333 40.8167 25.8333 46.5V98.1667ZM46.5 62C43.6583 62 41.2257 60.9882 39.2021 58.9646C37.1785 56.941 36.1667 54.5083 36.1667 51.6667C36.1667 48.825 37.1785 46.3924 39.2021 44.3687C41.2257 42.3451 43.6583 41.3333 46.5 41.3333C49.3417 41.3333 51.7743 42.3451 53.7979 44.3687C55.8215 46.3924 56.8333 48.825 56.8333 51.6667C56.8333 54.5083 55.8215 56.941 53.7979 58.9646C51.7743 60.9882 49.3417 62 46.5 62ZM77.5 62C74.6583 62 72.2257 60.9882 70.2021 58.9646C68.1785 56.941 67.1667 54.5083 67.1667 51.6667C67.1667 48.825 68.1785 46.3924 70.2021 44.3687C72.2257 42.3451 74.6583 41.3333 77.5 41.3333C80.3417 41.3333 82.7743 42.3451 84.7979 44.3687C86.8215 46.3924 87.8333 48.825 87.8333 51.6667C87.8333 54.5083 86.8215 56.941 84.7979 58.9646C82.7743 60.9882 80.3417 62 77.5 62ZM36.1667 98.1667V87.8333C36.1667 84.9917 37.1785 82.559 39.2021 80.5354C41.2257 78.5118 43.6583 77.5 46.5 77.5H77.5C80.3417 77.5 82.7743 78.5118 84.7979 80.5354C86.8215 82.559 87.8333 84.9917 87.8333 87.8333V98.1667H77.5V87.8333H67.1667V98.1667H56.8333V87.8333H46.5V98.1667H36.1667Z"
@@ -231,17 +240,22 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="fs-3">RPA (Automação robótica de processos)</h3>
+                                    <h3 class="fs-4">RPA (Automação robótica de processos)</h3>
                                     <p>Revolucione a forma como sua empresa realiza tarefas repetitivas e rotineiras
-                                        com nosso serviço de Automação Robótica de Processos (RPA). Nossa solução
-                                        avançada utiliza robôs de software para automatizar processos empresariais,
-                                        aumentando a eficiência, reduzindo erros e liberando sua equipe para se
-                                        concentrar em atividades de maior valor.</p>
+                                        com
+                                        nosso serviço de Automação Robótica de Processos (RPA). Nossa solução
+                                        avançada
+                                        utiliza robôs de software para automatizar processos empresariais,
+                                        aumentando a
+                                        eficiência, reduzindo erros e liberando sua equipe para se concentrar em
+                                        atividades de maior valor.</p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-start media-element p-3" style="background-color: #DAE7F2;">
+                        </div>
+                        <div class="item">
+                            <div class="shadow-sm mycard media-element p-4">
                                 <div
-                                    class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
+                                    class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded p-2">
                                     <svg class="bi" width="2em" height="2em" viewBox="0 0 124 124">
                                         <g clip-path="url(#clip0_50_702)">
                                             <path
@@ -256,30 +270,32 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="fs-3">Automação de obtenção de dados (WebScraping)</h3>
-                                    <p> Maximize o valor dos dados disponíveis na web com nosso serviço de automação de
-                                        obtenção de dados, também conhecido como Web Scraping. Nossa solução avançada
-                                        permite extrair, processar e transformar dados de websites em informações úteis
-                                        e acionáveis, impulsionando suas decisões de negócios e estratégias de mercado.
+                                    <h3 class="fs-4">Automação de obtenção de dados (WebScraping)</h3>
+                                    <p> Maximize o valor dos dados disponíveis na web com nosso serviço de automação
+                                        de
+                                        obtenção de dados, também conhecido como Web Scraping. Nossa solução
+                                        avançada
+                                        permite extrair, processar e transformar dados de websites em informações
+                                        úteis
+                                        e acionáveis, impulsionando suas decisões de negócios e estratégias de
+                                        mercado.
                                     </p>
                                 </div>
                             </div>
-
-                            <a class="next" href="#group-1" aria-label="next">
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </a>
                         </div>
                     </div>
+                    <button class="next-btn bg-primary">&#10095;</button>
                 </div>
             </div>
         </div>
 
-        <div id="about" class="container-fluid justify-content-center row p-0 m-0 align-items-center min-vh-100">
-            <div class="col-8 col-xl-8 col-xxl-8 my-5">
+        <div id="about"
+            class="container-fluid justify-content-center row p-0 m-0 align-items-center min-vh-100 linear-bg">
+            <div class="col-12 col-sm-8 col-xl-8 col-xxl-8 my-5">
                 <h1>Quem somos</h1>
-                <p>Nossa equipe de especialistas, incluindo profissionais experientes como nosso
-                    CEO e CTO, está comprometida com a colaboração e a inovação, garantindo que atendemos e
-                    superamos as expectativas dos clientes.</p>
+                <p>Nossa equipe de especialistas, incluindo profissionais experientes como nosso CEO e CTO, está
+                    comprometida com a colaboração e a inovação, garantindo que atendemos e superamos as expectativas
+                    dos clientes.</p>
                 <div class="row featurette align-items-center">
                     <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
                         <img class="img-fluid rounded mx-auto d-block" src="../images/perfil1.webp" alt="">
@@ -307,8 +323,8 @@
             </div>
         </div>
 
-        <div id="contact" class="d-flex justify-content-center align-items-center bg-light min-vh-100">
-            <div class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-4">
+        <div id="contact" class="d-flex justify-content-center align-items-center min-vh-100 linear-bg">
+            <div class="col-11 col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-4">
                 <h1>Contato</h1>
                 <p>Tem alguma dúvida ou gostaria de fazer um orçamento? Fale conosco!</p>
                 <form id="contact-form" class="row g-2 needs-validation" action="/enviar" method="post">
@@ -340,7 +356,7 @@
             <nav>
                 <h5>Menu</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#hero">Início</a></li>
                     <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#services">Serviços</a></li>
                     <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#about">Quem somos</a></li>
                     <li class="nav-item"><a class="nav-link px-0 py-1 fs-6" href="#contact">Contato</a></li>
@@ -386,6 +402,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 
 </html>
